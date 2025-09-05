@@ -35,15 +35,13 @@ function Cart() {
 
     return (
         <div className="container mt-4">
-            <h2 className="mb-4">Your Cart ({totalItems} items)</h2>
+            <h2 className="mb-4 text-secondary">Your Cart ({totalItems} items)</h2>
 
             <div className="card bg-dark text-white mb-4">
                 <div className="card-body">
                     {cartItems.map(item => (
-                        <div key={item.id} className="row mb-3 align-items-center border-bottom pb-3">
-                            <div className="col-md-2">
-                                <img src={item.image} alt={item.title} className="img-fluid" style={{ maxHeight: '100px', objectFit: 'contain', backgroundColor: 'white' }} />
-                            </div>
+                        <div key={item.id} className="row mb-3 align-items-center border-bottom border-secondary pb-3">
+                        
                             <div className="col-md-5">
                                 <h5 className='fw-bold text-danger'>{item.title}</h5>
                                 <p className="text-danger">${item.price}</p>
@@ -59,7 +57,7 @@ function Cart() {
                                     </button>
                                     <input
                                         type="number"
-                                        className="form-control text-center bg-dark text-white border-danger"
+                                        className="form-control text-center bg-dark text-secondary border-danger"
                                         value={item.quantity}
                                         onChange={(e) => handleQuantityChange(item.id, e.target.value)}
                                         min="1"
@@ -74,7 +72,7 @@ function Cart() {
                                 </div>
                             </div>
                             <div className="col-md-2 text-end">
-                                <p className="fw-bold">${(item.price * item.quantity).toFixed(2)}</p>
+                                <p className="fw-bold text-secondary mt-3 me-5">${(item.price * item.quantity).toFixed(2)}</p>
                             </div>
                             <div className="col-md-1 text-end">
                                 <button
@@ -91,11 +89,11 @@ function Cart() {
 
             <div className="row">
                 <div className="col-md-6">
-                    <Link to="/" className="btn btn-outline-danger">
+                    <Link to="/" className="btn btn-secondary">
                         Continue Shopping
                     </Link>
                     <button
-                        className="btn btn-outline-danger ms-2"
+                        className="btn btn-secondary ms-2"
                         onClick={handleClearCart}
                     >
                         Clear Cart
@@ -104,16 +102,16 @@ function Cart() {
                 <div className="col-md-6">
                     <div className="card bg-dark text-white">
                         <div className="card-body">
-                            <h5 className="card-title fw-bold">Order Summary</h5>
-                            <div className="d-flex justify-content-between my-2">
+                            <h5 className="card-title fw-bold text-secondary">Order Summary</h5>
+                            <div className="d-flex justify-content-between my-2 text-secondary">
                                 <span>Total Items:</span>
-                                <span>{totalItems}</span>
+                                <span className="text-danger">{totalItems}</span>
                             </div>
-                            <div className="d-flex justify-content-between my-2">
+                            <div className="d-flex justify-content-between my-2 text-secondary">
                                 <span>Total Price:</span>
                                 <span className="text-danger fw-bold">${totalPrice.toFixed(2)}</span>
                             </div>
-                            <button className="btn btn-danger w-100 mt-3">
+                            <button className="btn btn-danger w-100 mt-3 ">
                                 Checkout
                             </button>
                         </div>

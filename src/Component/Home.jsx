@@ -30,10 +30,10 @@ function Home() {
 
     return (
         <div className="container mt-4">
-            <div className="mb-4 w-25 ms-5 border-0 shadow bg-body">
+            <div className="mb-4 w-25 ms-5 border-0 shadow bg-body rounded-3 ">
                 <input
                     type="text"
-                    className="form-control"
+                    className="form-control bg-secondary border-0"
                     placeholder="Search products by title..."
                     value={query}
                     onChange={handleSearch}

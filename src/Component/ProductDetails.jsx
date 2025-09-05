@@ -31,7 +31,7 @@ function ProductDetails() {
                 <img
                     src={product.image}
                     alt={product.title}
-                    style={{ width: "100%", height: "auto", objectFit: "contain", backgroundColor: "red" }}
+                    style={{ width: "100%", height: "auto", objectFit: "contain", backgroundColor: "#393e46" , borderRadius : 5 }}
                 />
             </div>
             <div className="card-body">

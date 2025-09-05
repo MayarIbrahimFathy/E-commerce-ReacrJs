@@ -68,6 +68,7 @@ button:focus-visible {
 } */
 body {
   margin: 0;
+  background-color: #393e46;
 }
 
 .general{
